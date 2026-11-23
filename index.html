@@ -164,5 +164,33 @@
     }
   </script>
 <script src="ad.js"></script>
+<script src="videos.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const grid = document.querySelector(".video-grid, #videoGrid, main .grid") || document.querySelector("main");
+  if (grid && typeof VIDEOS !== "undefined" && VIDEOS.length) {
+    const container = document.createElement("div");
+    container.style.cssText = "display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;padding:16px;max-width:1200px;margin:0 auto;";
+    VIDEOS.forEach(v => {
+      const card = document.createElement("div");
+      card.style.cssText = "background:#16161d;border-radius:10px;overflow:hidden;cursor:pointer;border:1px solid #2a2a35;";
+      card.innerHTML = `<div style="position:relative;"><img src="${v.thumb}" style="width:100%;height:160px;object-fit:cover;display:block;"><span style="position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,0.8);color:#fff;padding:2px 6px;border-radius:4px;font-size:12px;">${v.duration}</span></div><div style="padding:12px;"><h3 style="color:#fff;font-size:15px;margin:0 0 6px;">${v.title}</h3><span style="color:#9ca3af;font-size:12px;">${v.views} views</span></div>`;
+      card.onclick = () => {
+        let modal = document.getElementById("vModal");
+        if (!modal) {
+          modal = document.createElement("div");
+          modal.id = "vModal";
+          modal.style.cssText = "position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px;";
+          document.body.appendChild(modal);
+        }
+        modal.style.display = "flex";
+        modal.innerHTML = `<div style="width:100%;max-width:800px;"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;"><span style="color:#fff;font-weight:bold;">${v.title}</span><button onclick="document.getElementById('vModal').style.display='none';document.getElementById('vFrame').src='';" style="background:#e11d48;color:#fff;border:none;padding:6px 14px;border-radius:6px;cursor:pointer;font-weight:bold;">Close ✕</button></div><div style="position:relative;padding-top:56.25%;background:#000;border-radius:8px;overflow:hidden;"><iframe id="vFrame" src="${v.embed}" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" allowfullscreen></iframe></div></div>`;
+      };
+      container.appendChild(card);
+    });
+    grid.prepend(container);
+  }
+});
+</script>
 </body>
 </html>
