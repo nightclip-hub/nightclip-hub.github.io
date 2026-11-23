@@ -1,198 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="e473b03e17d8c90da91c42a2c06ea45920f66aed" content="e473b03e17d8c90da91c42a2c06ea45920f66aed" />
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="d6d150c1bdddc2cc9655aedf66e6d8a52b7aca4b" content="d6d150c1bdddc2cc9655aedf66e6d8a52b7aca4b" />
-  <title>18+ Exclusive Video Stream</title>
-  <!-- HILLTOPADS_POPUNDER_HERE -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer-when-downgrade" />
+  <title>NightClip Hub — Exclusive 18+ Videos</title>
   <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: #09090b; color: #f4f4f5;
-    }
-    header {
-      background: #121216; border-bottom: 1px solid #27272a;
-      padding: 14px 18px; display: flex; justify-content: space-between; align-items: center;
-      position: sticky; top: 0; z-index: 50;
-    }
-    .logo { font-size: 20px; font-weight: 900; color: #f43f5e; }
-    .badge-18 {
-      background: #f43f5e; color: #fff; font-size: 11px; font-weight: 900;
-      padding: 3px 8px; border-radius: 6px;
-    }
-    .container { max-width: 1080px; margin: 0 auto; padding: 16px; }
-    .player-wrap {
-      position: relative; width: 100%; aspect-ratio: 16 / 9;
-      background: #000; border-radius: 14px; overflow: hidden;
-      border: 1px solid #27272a; margin-bottom: 14px;
-    }
-    iframe { width: 100%; height: 100%; border: none; }
-    .ad-overlay {
-      position: absolute; inset: 0; background: rgba(0, 0, 0, 0.95);
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      z-index: 20; text-align: center; padding: 16px;
-    }
-    .skip-btn {
-      margin-top: 12px; padding: 11px 22px; border-radius: 8px; border: none;
-      background: #f43f5e; color: #fff; font-weight: 800; font-size: 14px; cursor: pointer;
-    }
-    .skip-btn:disabled { background: #3f3f46; cursor: not-allowed; }
-    .ad-banner {
-      background: #18181b; border: 1px dashed #3f3f46; border-radius: 10px;
-      padding: 12px; text-align: center; color: #a1a1aa; font-size: 13px; margin-bottom: 16px;
-    }
-    .grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px;
-    }
-    .v-card {
-      background: #121216; border: 1px solid #27272a; border-radius: 12px;
-      overflow: hidden; cursor: pointer; transition: transform 0.15s;
-    }
-    .v-card:hover { transform: translateY(-2px); border-color: #f43f5e; }
-    .thumb {
-      width: 100%; aspect-ratio: 16 / 9; background: linear-gradient(135deg, #1f1f23, #2d1520);
-      display: flex; align-items: center; justify-content: center; font-size: 34px;
-    }
-    .v-info { padding: 10px 12px; }
-    .v-title { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
-    .v-meta { font-size: 11.5px; color: #a1a1aa; }
-    .age-gate {
-      position: fixed; inset: 0; background: rgba(0,0,0,0.97); z-index: 999;
-      display: flex; align-items: center; justify-content: center; padding: 16px;
-    }
-    .age-box {
-      max-width: 380px; background: #121216; border: 1px solid #f43f5e;
-      border-radius: 16px; padding: 24px; text-align: center;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
+    body { background: #0d0d12; color: #f3f4f6; min-height: 100vh; }
+    header { background: #14141c; padding: 16px 20px; border-bottom: 1px solid #262633; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 20px; font-weight: 800; color: #fff; }
+    .logo span { color: #e11d48; }
+    .badge { background: #e11d48; color: #fff; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 4px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 18px; padding: 20px; max-width: 1200px; margin: 0 auto; }
+    .card { background: #16161f; border: 1px solid #272736; border-radius: 12px; overflow: hidden; cursor: pointer; transition: transform 0.2s; }
+    .card:hover { transform: translateY(-3px); border-color: #e11d48; }
+    .thumb-wrap { position: relative; aspect-ratio: 16/9; background: #000; }
+    .thumb-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .duration { position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.85); padding: 3px 7px; border-radius: 5px; font-size: 12px; font-weight: 600; }
+    .play-icon { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.25); font-size: 38px; color: #fff; }
+    .info { padding: 14px; }
+    .title { font-size: 15px; font-weight: 600; margin-bottom: 6px; line-height: 1.4; }
+    .meta { font-size: 12px; color: #9ca3af; }
+    #ageGate { position: fixed; inset: 0; background: rgba(10,10,15,0.97); z-index: 99999; display: flex; align-items: center; justify-content: center; padding: 20px; text-align: center; }
+    .gate-box { background: #181822; border: 1px solid #2e2e3e; padding: 30px 24px; border-radius: 16px; max-width: 400px; width: 100%; }
+    .gate-box h2 { margin-bottom: 10px; font-size: 22px; }
+    .gate-box p { color: #9ca3af; font-size: 14px; margin-bottom: 22px; line-height: 1.5; }
+    .btn-enter { background: #e11d48; color: #fff; border: none; width: 100%; padding: 13px; border-radius: 8px; font-size: 15px; font-weight: 700; cursor: pointer; }
   </style>
 </head>
 <body>
-  <div class="age-gate" id="ageGate">
-    <div class="age-box">
-      <div style="font-size:36px; margin-bottom:8px;">🔞</div>
-      <h2 style="margin:0 0 8px;">Age Verification (18+)</h2>
-      <p style="font-size:13px; color:#a1a1aa; margin-bottom:18px;">
-        This site contains age-restricted videos. Confirm you are 18+ to continue.
-      </p>
-      <button class="skip-btn" style="width:100%;" onclick="document.getElementById('ageGate').style.display='none'">
-        I am 18+ — Enter Now
-      </button>
+  <div id="ageGate">
+    <div class="gate-box">
+      <h2>🔞 18+ Age Verification</h2>
+      <p>This website contains adult content. By entering, you confirm that you are 18 years of age or older.</p>
+      <button class="btn-enter" onclick="document.getElementById('ageGate').style.display='none'">I am 18 or older — Enter</button>
     </div>
   </div>
 
   <header>
-    <div class="logo">🔥 VelvetStream</div>
-    <span class="badge-18">18+ HD</span>
+    <div class="logo">NightClip<span>Hub</span></div>
+    <div class="badge">18+ HD</div>
   </header>
 
-  <div class="container">
-    <div class="player-wrap">
-      <div class="ad-overlay" id="preRollOverlay">
-        <div style="color:#f43f5e; font-weight:800; font-size:12px; margin-bottom:8px;">SPONSORED AD — SUPPORT FREE STREAMING</div>
-        <div id="adSlotBox" style="padding:16px; background:#18181b; border-radius:10px; max-width:340px;">
-          <!-- HILLTOPADS_300X250_HERE -->
-          <p style="margin:0; font-size:13px;">Video unlocks automatically in a few seconds...</p>
-        </div>
-        <button class="skip-btn" id="skipAdBtn" disabled onclick="closePreRoll()">Wait 10s...</button>
-      </div>
-      <iframe id="mainFrame" allowfullscreen></iframe>
-    </div>
+  <main class="grid" id="videoGrid"></main>
 
-    <h3 id="nowPlayingTitle" style="margin:0 0 12px;">Tap any video below to watch</h3>
-
-    <div class="ad-banner">
-      <!-- HILLTOPADS_728X90_HERE -->
-      Sponsored Banner Ad
-    </div>
-
-    <div class="grid" id="videoGrid"></div>
-  </div>
-
+  <script src="videos.js"></script>
   <script>
-    const VIDEOS = [
-      { id: 1, title: "Exclusive Night Clip #1", views: "14.2K views", duration: "09:15", embedUrl: "" },
-      { id: 2, title: "VIP Private Session #2", views: "11.8K views", duration: "13:40", embedUrl: "" },
-      { id: 3, title: "Trending Release #3", views: "28.5K views", duration: "16:20", embedUrl: "" },
-      { id: 4, title: "Full Studio Cut #4", views: "8.9K views", duration: "11:05", embedUrl: "" }
-    ];
-
     const grid = document.getElementById("videoGrid");
-    VIDEOS.forEach(v => {
-      const card = document.createElement("div");
-      card.className = "v-card";
-      card.innerHTML = `
-        <div class="thumb">▶️</div>
-        <div class="v-info">
-          <div class="v-title">${v.title}</div>
-          <div class="v-meta">${v.views} • ${v.duration}</div>
-        </div>
-      `;
-      card.onclick = () => playWithAd(v);
-      grid.appendChild(card);
-    });
-
-    function playWithAd(videoObj) {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      document.getElementById("nowPlayingTitle").textContent = videoObj.title;
-      const overlay = document.getElementById("preRollOverlay");
-      const btn = document.getElementById("skipAdBtn");
-      const frame = document.getElementById("mainFrame");
-
-      frame.src = videoObj.embedUrl || "about:blank";
-      overlay.style.display = "flex";
-      btn.disabled = true;
-      let sec = 10;
-      btn.textContent = `Wait ${sec}s...`;
-
-      const timer = setInterval(() => {
-        sec--;
-        if (sec > 0) {
-          btn.textContent = `Wait ${sec}s...`;
-        } else {
-          clearInterval(timer);
-          btn.disabled = false;
-          btn.textContent = "Skip Ad & Watch Video ▶";
-        }
-      }, 1000);
-    }
-
-    function closePreRoll() {
-      document.getElementById("preRollOverlay").style.display = "none";
+    if (typeof VIDEOS !== "undefined") {
+      VIDEOS.forEach(v => {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = `
+          <div class="thumb-wrap">
+            <img src="${v.thumb}" alt="${v.title}">
+            <div class="play-icon">▶</div>
+            <span class="duration">${v.duration}</span>
+          </div>
+          <div class="info">
+            <div class="title">${v.title}</div>
+            <div class="meta">${v.views} views • HD</div>
+          </div>
+        `;
+        card.onclick = () => window.open(v.embed, "_blank");
+        grid.appendChild(card);
+      });
     }
   </script>
-<script src="ad.js"></script>
-<script src="videos.js"></script>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const grid = document.querySelector(".video-grid, #videoGrid, main .grid") || document.querySelector("main");
-  if (grid && typeof VIDEOS !== "undefined" && VIDEOS.length) {
-    const container = document.createElement("div");
-    container.style.cssText = "display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;padding:16px;max-width:1200px;margin:0 auto;";
-    VIDEOS.forEach(v => {
-      const card = document.createElement("div");
-      card.style.cssText = "background:#16161d;border-radius:10px;overflow:hidden;cursor:pointer;border:1px solid #2a2a35;";
-      card.innerHTML = `<div style="position:relative;"><img src="${v.thumb}" style="width:100%;height:160px;object-fit:cover;display:block;"><span style="position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,0.8);color:#fff;padding:2px 6px;border-radius:4px;font-size:12px;">${v.duration}</span></div><div style="padding:12px;"><h3 style="color:#fff;font-size:15px;margin:0 0 6px;">${v.title}</h3><span style="color:#9ca3af;font-size:12px;">${v.views} views</span></div>`;
-      card.onclick = () => {
-        window.open(v.embed, "_blank");
-        return;
-        let modal = document.getElementById("vModal");
-        if (!modal) {
-          modal = document.createElement("div");
-          modal.id = "vModal";
-          modal.style.cssText = "position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px;";
-          document.body.appendChild(modal);
-        }
-        modal.style.display = "flex";
-        modal.innerHTML = `<div style="width:100%;max-width:800px;"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;"><span style="color:#fff;font-weight:bold;">${v.title}</span><button onclick="document.getElementById('vModal').style.display='none';document.getElementById('vFrame').src='';" style="background:#e11d48;color:#fff;border:none;padding:6px 14px;border-radius:6px;cursor:pointer;font-weight:bold;">Close ✕</button></div><div style="position:relative;padding-top:56.25%;background:#000;border-radius:8px;overflow:hidden;"><iframe id="vFrame" src="${v.embed}" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" allowfullscreen></iframe></div></div>`;
-      };
-      container.appendChild(card);
-    });
-    grid.prepend(container);
-  }
-});
-</script>
+  <script src="ad.js"></script>
 </body>
 </html>
