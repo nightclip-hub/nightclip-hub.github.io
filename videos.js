@@ -1,5 +1,26 @@
 const VIDEOS = [
   {
+    title: "Exclusive Late Night VIP Clip #8",
+    duration: "04:30",
+    views: "1.6K",
+    thumb: "https://i.ibb.co/99RXmLTS/Screenshot-20261125-181717-Plus.jpg",
+    embed: "https://streamtape.com/e/XwpdMAY8xZuDr3Q"
+  },
+  {
+    title: "Exclusive Late Night VIP Clip #7",
+    duration: "03:55",
+    views: "2.1K",
+    thumb: "https://i.ibb.co/zV12Hs01/Screenshot-20261125-181658-Plus.jpg",
+    embed: "https://streamtape.com/e/KG68x8OB1ZSgmL"
+  },
+  {
+    title: "Exclusive Late Night VIP Clip #6",
+    duration: "05:10",
+    views: "2.8K",
+    thumb: "https://i.ibb.co/v4PJkKQq/Screenshot-20261125-181611-Plus.jpg",
+    embed: "https://streamtape.com/e/ekkm2K3DxRsY4ZB"
+  },
+  {
     title: "Exclusive Late Night VIP Clip #5",
     duration: "03:45",
     views: "1.9K",
