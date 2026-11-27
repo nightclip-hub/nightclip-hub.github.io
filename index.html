@@ -1,75 +1,266 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="am">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="referrer" content="no-referrer-when-downgrade" />
-  <title>Habesh Hot 🔥 🥵 — Exclusive 18+ Videos</title>
+  <title>Habesh Hot 🔥 🥵 — Exclusive 18+ & VIP Videos</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
-    body { background: #0d0d12; color: #f3f4f6; min-height: 100vh; }
-    header { background: #14141c; padding: 16px 20px; border-bottom: 1px solid #262633; display: flex; justify-content: space-between; align-items: center; }
-    .logo { font-size: 20px; font-weight: 800; color: #fff; }
+    body { background: #0a0a0f; color: #f3f4f6; min-height: 100vh; padding-bottom: 40px; }
+    header { position: sticky; top: 0; z-index: 100; background: rgba(20, 20, 28, 0.95); backdrop-filter: blur(8px); padding: 14px 16px; border-bottom: 1px solid #262633; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 19px; font-weight: 800; color: #fff; }
     .logo span { color: #e11d48; margin-left: 4px; }
-    .badge { background: #e11d48; color: #fff; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 4px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 18px; padding: 20px; max-width: 1200px; margin: 0 auto; }
-    .card { background: #16161f; border: 1px solid #272736; border-radius: 12px; overflow: hidden; cursor: pointer; transition: transform 0.2s; }
-    .card:hover { transform: translateY(-3px); border-color: #e11d48; }
-    .thumb-wrap { position: relative; aspect-ratio: 16/9; background: #000; }
-    .thumb-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .duration { position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.85); padding: 3px 7px; border-radius: 5px; font-size: 12px; font-weight: 600; }
-    .play-icon { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.25); font-size: 38px; color: #fff; }
-    .info { padding: 14px; }
-    .title { font-size: 15px; font-weight: 600; margin-bottom: 6px; line-height: 1.4; }
-    .meta { font-size: 12px; color: #9ca3af; }
-    #ageGate { position: fixed; inset: 0; background: rgba(10,10,15,0.97); z-index: 99999; display: flex; align-items: center; justify-content: center; padding: 20px; text-align: center; }
-    .gate-box { background: #181822; border: 1px solid #2e2e3e; padding: 30px 24px; border-radius: 16px; max-width: 400px; width: 100%; }
-    .gate-box h2 { margin-bottom: 10px; font-size: 22px; }
-    .gate-box p { color: #9ca3af; font-size: 14px; margin-bottom: 22px; line-height: 1.5; }
-    .btn-enter { background: #e11d48; color: #fff; border: none; width: 100%; padding: 13px; border-radius: 8px; font-size: 15px; font-weight: 700; cursor: pointer; }
+    .header-actions { display: flex; gap: 6px; align-items: center; }
+    .tg-btn { background: #0088cc; color: #fff; text-decoration: none; padding: 6px 10px; border-radius: 6px; font-size: 12px; font-weight: 700; }
+    .vip-btn-top { background: linear-gradient(135deg, #f59e0b, #d97706); color: #000; border: none; padding: 6px 11px; border-radius: 6px; font-size: 12px; font-weight: 800; cursor: pointer; }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 16px; }
+    .section-header { display: flex; justify-content: space-between; align-items: center; margin: 22px 0 12px; }
+    .section-title { font-size: 17px; font-weight: 800; display: flex; align-items: center; gap: 6px; }
+    .section-badge { font-size: 11px; padding: 2px 8px; border-radius: 12px; font-weight: 700; }
+    .badge-red { background: rgba(225, 29, 72, 0.2); color: #fb7185; border: 1px solid #e11d48; }
+    .badge-gold { background: rgba(245, 158, 11, 0.2); color: #fbbf24; border: 1px solid #f59e0b; }
+
+    /* 1. Featured Spotlight Banner */
+    .featured-card { position: relative; border-radius: 16px; overflow: hidden; border: 1px solid #e11d48; cursor: pointer; aspect-ratio: 16/9; max-height: 360px; width: 100%; background: #000; }
+    .featured-card img { width: 100%; height: 100%; object-fit: cover; }
+    .featured-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.92) 10%, rgba(0,0,0,0.2) 60%, transparent); display: flex; flex-direction: column; justify-content: flex-end; padding: 18px; }
+    .featured-tag { background: #e11d48; color: #fff; font-size: 11px; font-weight: 800; padding: 4px 10px; border-radius: 6px; width: fit-content; margin-bottom: 8px; }
+    .featured-title { font-size: 18px; font-weight: 800; margin-bottom: 4px; }
+    .featured-meta { font-size: 12px; color: #d1d5db; }
+
+    /* 2. VIP Horizontal Carousel */
+    .vip-scroll { display: flex; gap: 14px; overflow-x: auto; padding-bottom: 10px; scroll-snap-type: x mandatory; }
+    .vip-scroll::-webkit-scrollbar { height: 5px; }
+    .vip-scroll::-webkit-scrollbar-thumb { background: #f59e0b; border-radius: 10px; }
+    .vip-item { min-width: 240px; max-width: 240px; scroll-snap-align: start; background: #16161f; border: 1px solid #f59e0b; border-radius: 12px; overflow: hidden; cursor: pointer; }
+    .vip-item .thumb-wrap { position: relative; aspect-ratio: 16/9; background: #000; }
+    .vip-item img { width: 100%; height: 100%; object-fit: cover; }
+    .vip-item.locked img { filter: blur(5px) brightness(0.7); }
+    .vip-pill { position: absolute; top: 8px; left: 8px; background: linear-gradient(135deg, #f59e0b, #d97706); color: #000; font-size: 10px; font-weight: 800; padding: 3px 7px; border-radius: 5px; }
+    .lock-center { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; background: rgba(0,0,0,0.3); font-size: 26px; }
+    .lock-text { font-size: 11px; background: rgba(0,0,0,0.85); color: #fbbf24; padding: 3px 8px; border-radius: 10px; margin-top: 4px; border: 1px solid #f59e0b; font-weight: 700; }
+
+    /* 3. Latest 2-Column Grid */
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    @media (min-width: 768px) { .grid-2 { grid-template-columns: repeat(4, 1fr); } }
+    .grid-card { background: #16161f; border: 1px solid #272736; border-radius: 12px; overflow: hidden; cursor: pointer; }
+    .grid-card .thumb-wrap { position: relative; aspect-ratio: 16/9; background: #000; }
+    .grid-card img { width: 100%; height: 100%; object-fit: cover; }
+    .duration { position: absolute; bottom: 6px; right: 6px; background: rgba(0,0,0,0.85); padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: 700; }
+    .play-sm { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 26px; color: rgba(255,255,255,0.9); background: rgba(0,0,0,0.2); }
+    .card-info { padding: 10px; }
+    .card-title { font-size: 13px; font-weight: 700; line-height: 1.35; margin-bottom: 4px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .card-meta { font-size: 11px; color: #9ca3af; }
+
+    /* 4. Popular Compact Horizontal List */
+    .list-stack { display: flex; flex-direction: column; gap: 10px; }
+    .list-row { display: flex; gap: 12px; background: #16161f; border: 1px solid #272736; border-radius: 12px; padding: 8px; cursor: pointer; align-items: center; }
+    .list-thumb { position: relative; width: 130px; min-width: 130px; aspect-ratio: 16/9; border-radius: 8px; overflow: hidden; background: #000; }
+    .list-thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .list-body { flex: 1; }
+    .list-title { font-size: 14px; font-weight: 700; margin-bottom: 5px; line-height: 1.3; }
+    .list-meta { font-size: 12px; color: #9ca3af; }
+
+    /* Modals */
+    .modal { position: fixed; inset: 0; background: rgba(10,10,15,0.96); z-index: 99999; display: flex; align-items: center; justify-content: center; padding: 16px; text-align: center; overflow-y: auto; }
+    .modal-box { background: #181822; border: 1px solid #2e2e3e; padding: 22px 18px; border-radius: 16px; max-width: 420px; width: 100%; }
+    .modal-box h2 { margin-bottom: 12px; font-size: 20px; color: #fbbf24; }
+    .plan-list { background: #111118; border: 1px solid #2d2d3d; border-radius: 10px; padding: 12px; margin-bottom: 12px; text-align: left; font-size: 14px; line-height: 1.8; color: #fff; font-weight: 700; }
+    .pay-info { background: #20202c; border: 1px dashed #f59e0b; padding: 11px; border-radius: 10px; margin-bottom: 12px; font-size: 13px; line-height: 1.6; color: #e5e7eb; text-align: left; }
+    .wallet-box { background: #0d0d12; padding: 7px; border-radius: 6px; font-family: monospace; font-size: 11px; color: #34d399; word-break: break-all; margin-top: 4px; border: 1px solid #272736; }
+    .tg-contact-btn { display: block; background: #0088cc; color: #fff; text-decoration: none; padding: 11px; border-radius: 8px; font-weight: 700; font-size: 14px; margin-bottom: 12px; }
+    .code-input { width: 100%; padding: 11px; border-radius: 8px; border: 1px solid #3f3f52; background: #0d0d12; color: #fff; font-size: 15px; text-align: center; margin-bottom: 10px; }
+    .btn-primary { background: #e11d48; color: #fff; border: none; width: 100%; padding: 13px; border-radius: 8px; font-size: 15px; font-weight: 700; cursor: pointer; }
+    .btn-gold { background: linear-gradient(135deg, #f59e0b, #d97706); color: #000; border: none; width: 100%; padding: 12px; border-radius: 8px; font-size: 15px; font-weight: 800; cursor: pointer; }
+    .btn-close { background: transparent; color: #9ca3af; border: none; font-size: 13px; cursor: pointer; margin-top: 10px; }
   </style>
 </head>
 <body>
-  <div id="ageGate">
-    <div class="gate-box">
-      <h2>🔞 18+ Age Verification</h2>
-      <p>This website contains adult content. By entering, you confirm that you are 18 years of age or older.</p>
-      <button class="btn-enter" onclick="document.getElementById('ageGate').style.display='none'">I am 18 or older — Enter</button>
+  <div id="ageGate" class="modal">
+    <div class="modal-box">
+      <h2 style="color:#fff;">🔞 18+ Age Verification</h2>
+      <p style="color:#9ca3af;font-size:14px;margin-bottom:20px;">This website contains adult content. By entering, you confirm that you are 18 years of age or older.</p>
+      <button class="btn-primary" onclick="document.getElementById('ageGate').style.display='none'">I am 18 or older — Enter</button>
+    </div>
+  </div>
+
+  <div id="vipModal" class="modal" style="display:none;">
+    <div class="modal-box">
+      <h2>👑 VIP Premium አባልነት</h2>
+      <div class="plan-list" id="vipPlans"></div>
+      <div class="pay-info">
+        <div>🏦 <b>ንግድ ባንክ (CBE) & M-Pesa:</b> ለመክፈል <a href="https://t.me/Ssccuurr1" target="_blank" style="color:#38bdf8;font-weight:700;">@Ssccuurr1</a> ያናግሩ</div>
+        <div style="margin-top:6px;">💎 <b>Crypto USDT (TRC20):</b></div>
+        <div class="wallet-box" id="usdtWallet"></div>
+        <div style="margin-top:8px;color:#fbbf24;font-size:12px;">✅ ብር አስገብተው ደረሰኝ Screenshot ወደ <b>@Ssccuurr1</b> ሲልኩ የVIP ኮድ ወዲያውኑ ይሰጥዎታል (24 ሰዓት Online ነን)።</div>
+      </div>
+      <a href="https://t.me/Ssccuurr1" target="_blank" class="tg-contact-btn">📥 ደረሰኝ ለመላክ @Ssccuurr1 ይንኩ</a>
+      <input type="text" id="vipCodeInput" class="code-input" placeholder="የVIP ኮድዎን እዚህ ያስገቡ (VIP Code)">
+      <button class="btn-gold" onclick="unlockVip()">🔓 VIP ቪዲዮዎችን ክፈት</button>
+      <button class="btn-close" onclick="document.getElementById('vipModal').style.display='none'">ዝጋ (Close)</button>
     </div>
   </div>
 
   <header>
     <div class="logo">Habesh<span>Hot 🔥 🥵</span></div>
-    <div class="badge">18+ HD</div>
+    <div class="header-actions">
+      <a href="https://t.me/sexxxxoxx" target="_blank" class="tg-btn">✈️ Telegram</a>
+      <button class="vip-btn-top" id="vipStatusBtn" onclick="openVipModal()">👑 VIP</button>
+    </div>
   </header>
 
-  <main class="grid" id="videoGrid"></main>
+  <div class="container">
+    <!-- Section 1: Featured Spotlight -->
+    <div id="featuredSection"></div>
+
+    <!-- Section 2: VIP Horizontal Carousel -->
+    <div class="section-header">
+      <div class="section-title">👑 VIP Exclusive Zone</div>
+      <span class="section-badge badge-gold">🔒 VIP ONLY</span>
+    </div>
+    <div class="vip-scroll" id="vipSection"></div>
+
+    <!-- Section 3: Latest Free 2-Column Grid -->
+    <div class="section-header">
+      <div class="section-title">🔥 Latest Free HD</div>
+      <span class="section-badge badge-red">FREE STREAM</span>
+    </div>
+    <div class="grid-2" id="latestSection"></div>
+
+    <!-- Section 4: Popular Compact List -->
+    <div class="section-header">
+      <div class="section-title">⚡ Most Watched Clips</div>
+      <span class="section-badge badge-red">TRENDING</span>
+    </div>
+    <div class="list-stack" id="popularSection"></div>
+  </div>
 
   <script src="videos.js"></script>
   <script>
-    const grid = document.getElementById("videoGrid");
-    if (typeof VIDEOS !== "undefined") {
-      VIDEOS.forEach(v => {
-        const card = document.createElement("div");
-        card.className = "card";
-        card.innerHTML = `
-          <div class="thumb-wrap">
-            <img src="${v.thumb}" alt="${v.title}">
-            <div class="play-icon">▶</div>
-            <span class="duration">${v.duration}</span>
-          </div>
-          <div class="info">
-            <div class="title">${v.title}</div>
-            <div class="meta">${v.views} views • HD</div>
+    let isVipUnlocked = localStorage.getItem('habesh_vip_unlocked') === 'true';
+
+    document.getElementById('vipPlans').innerHTML = VIP_CONFIG.plans.map(p => `<div>• ${p}</div>`).join('');
+    document.getElementById('usdtWallet').innerText = VIP_CONFIG.usdtAddress;
+    if (isVipUnlocked) {
+      document.getElementById('vipStatusBtn').innerText = '👑 VIP Active';
+    }
+
+    function openVipModal() {
+      document.getElementById('vipModal').style.display = 'flex';
+    }
+
+    function unlockVip() {
+      const entered = document.getElementById('vipCodeInput').value.trim().toUpperCase();
+      if (VIP_CONFIG.codes.includes(entered)) {
+        localStorage.setItem('habesh_vip_unlocked', 'true');
+        isVipUnlocked = true;
+        document.getElementById('vipModal').style.display = 'none';
+        document.getElementById('vipStatusBtn').innerText = '👑 VIP Active';
+        renderAllSections();
+        alert('እንኳን ደስ አለዎት! ሁሉም የVIP ቪዲዮዎች ተከፍተዋል።');
+      } else {
+        alert('ያስገቡት ኮድ ትክክል አይደለም! ኮድ ለማግኘት @Ssccuurr1 ላይ ደረሰኝ ይላኩ።');
+      }
+    }
+
+    function playVideo(v) {
+      if (v.vip && !isVipUnlocked) {
+        openVipModal();
+      } else {
+        window.open("https://acidic-deal.com/bv3bV.0oP_3Op-vDbimjV_JMZbDt0E3/NWj/UOzwMOj/gm1BLoTKcW2MNxTwMxyYOJDnki", "_blank");
+        window.location.href = v.embed;
+      }
+    }
+
+    function renderAllSections() {
+      if (typeof VIDEOS === 'undefined') return;
+
+      // 1. Featured
+      const feat = VIDEOS.find(v => v.category === 'featured') || VIDEOS.find(v => !v.vip);
+      const featEl = document.getElementById('featuredSection');
+      if (feat) {
+        featEl.innerHTML = `
+          <div class="featured-card" onclick='playVideo(${JSON.stringify(feat)})'>
+            <img src="${feat.thumb}" alt="${feat.title}">
+            <div class="featured-overlay">
+              <span class="featured-tag">🔥 FEATURED TONIGHT • ${feat.duration}</span>
+              <div class="featured-title">${feat.title}</div>
+              <div class="featured-meta">▶ Watch Free HD • ${feat.views} views</div>
+            </div>
           </div>
         `;
-        card.onclick = () => {
-          window.open("https://acidic-deal.com/bv3bV.0oP_3Op-vDbimjV_JMZbDt0E3/NWj/UOzwMOj/gm1BLoTKcW2MNxTwMxyYOJDnki", "_blank");
-          window.location.href = v.embed;
-        };
-        grid.appendChild(card);
+      }
+
+      // 2. VIP Carousel
+      const vipEl = document.getElementById('vipSection');
+      vipEl.innerHTML = '';
+      VIDEOS.filter(v => v.vip).forEach(v => {
+        const locked = !isVipUnlocked;
+        const div = document.createElement('div');
+        div.className = 'vip-item' + (locked ? ' locked' : '');
+        div.innerHTML = `
+          <div class="thumb-wrap">
+            <img src="${v.thumb}" alt="${v.title}">
+            <span class="vip-pill">👑 VIP</span>
+            <div class="lock-center">
+              ${locked ? '🔒<span class="lock-text">Tap to Unlock</span>' : '▶'}
+            </div>
+            <span class="duration">${v.duration}</span>
+          </div>
+          <div class="card-info">
+            <div class="card-title">${v.title}</div>
+            <div class="card-meta">${v.views} views • VIP Exclusive</div>
+          </div>
+        `;
+        div.onclick = () => playVideo(v);
+        vipEl.appendChild(div);
+      });
+
+      // 3. Latest 2-Col Grid
+      const latestEl = document.getElementById('latestSection');
+      latestEl.innerHTML = '';
+      VIDEOS.filter(v => !v.vip && v.category === 'latest').forEach(v => {
+        const div = document.createElement('div');
+        div.className = 'grid-card';
+        div.innerHTML = `
+          <div class="thumb-wrap">
+            <img src="${v.thumb}" alt="${v.title}">
+            <div class="play-sm">▶</div>
+            <span class="duration">${v.duration}</span>
+          </div>
+          <div class="card-info">
+            <div class="card-title">${v.title}</div>
+            <div class="card-meta">${v.views} views • HD</div>
+          </div>
+        `;
+        div.onclick = () => playVideo(v);
+        latestEl.appendChild(div);
+      });
+
+      // 4. Popular Compact List
+      const popEl = document.getElementById('popularSection');
+      popEl.innerHTML = '';
+      VIDEOS.filter(v => !v.vip && v.category === 'popular').forEach(v => {
+        const div = document.createElement('div');
+        div.className = 'list-row';
+        div.innerHTML = `
+          <div class="list-thumb">
+            <img src="${v.thumb}" alt="${v.title}">
+            <span class="duration">${v.duration}</span>
+          </div>
+          <div class="list-body">
+            <div class="list-title">${v.title}</div>
+            <div class="list-meta">🔥 ${v.views} views • Free HD Stream</div>
+          </div>
+        `;
+        div.onclick = () => playVideo(v);
+        popEl.appendChild(div);
       });
     }
+
+    renderAllSections();
   </script>
   <script src="ad.js"></script>
 </body>
