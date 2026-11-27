@@ -1,5 +1,37 @@
 const VIDEOS = [
   {
+    title: "Habesh Hot VIP Exclusive 🔒 #12",
+    duration: "04:45",
+    views: "3.8K",
+    vip: true,
+    thumb: "https://thumb.tapecontent.net/thumb/be7wOYZPOQfPwwX/wa8mJKQAykIJ7aq.jpg",
+    embed: "https://streamtape.com/e/be7wOYZPOQfPwwX"
+  },
+  {
+    title: "Habesh Hot VIP Exclusive 🔒 #11",
+    duration: "05:15",
+    views: "4.5K",
+    vip: true,
+    thumb: "https://thumb.tapecontent.net/thumb/Oo0jBe4Q4kSZBjq/MXQrPDx3m8hm7Ay.jpg",
+    embed: "https://streamtape.com/e/Oo0jBe4Q4kSZBjq"
+  },
+  {
+    title: "Habesh Hot VIP Exclusive 🔒 #10",
+    duration: "03:50",
+    views: "3.2K",
+    vip: true,
+    thumb: "https://thumb.tapecontent.net/thumb/dkJoPrmorPukLOR/G6qMKKaYjAU1jL3.jpg",
+    embed: "https://streamtape.com/e/dkJoPrmorPukLOR"
+  },
+  {
+    title: "Habesh Hot VIP Exclusive 🔒 #9",
+    duration: "04:20",
+    views: "4.1K",
+    vip: true,
+    thumb: "https://thumb.tapecontent.net/thumb/Wr6v68ldXLFqKW/vgvom2jXZ3sYJV.jpg",
+    embed: "https://streamtape.com/e/Wr6v68ldXLFqKW"
+  },
+  {
     title: "Habesh Hot Exclusive Clip 🔥 #8",
     duration: "04:30",
     views: "1.6K",
